@@ -71,7 +71,7 @@ export function FloatingTokens() {
           size={token.size}
           initialPosition={{
             x: typeof token.position.x === 'string'
-              ? parseFloat(token.position.x) / 100 * window.innerWidth
+              ? parseFloat(token.position.x) / 100 * (typeof window !== 'undefined' ? window.innerWidth : 0)
               : token.position.x,
             y: token.position.y
           }}
