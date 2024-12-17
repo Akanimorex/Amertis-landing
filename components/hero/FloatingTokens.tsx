@@ -1,8 +1,17 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import { TokenImage } from './TokenImage';
 
-const tokens = [
+// Define a type for the token data
+type TokenData = {
+  src: string;
+  position: { x: string | number; y: number };
+  size: number;
+  duration: number;
+};
+
+const tokensData: TokenData[] = [
   {
     src: "https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
     position: { x: '10%', y: 100 },
@@ -36,6 +45,23 @@ const tokens = [
 ];
 
 export function FloatingTokens() {
+  const [tokens, setTokens] = useState<TokenData[]>(tokensData);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const updatedTokens = tokensData.map(token => ({
+        ...token,
+        position: {
+          x: typeof token.position.x === 'string'
+            ? parseFloat(token.position.x) / 100 * window.innerWidth
+            : token.position.x,
+          y: token.position.y
+        }
+      }));
+      setTokens(updatedTokens);
+    }
+  }, []);
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {tokens.map((token, index) => (
@@ -43,11 +69,11 @@ export function FloatingTokens() {
           key={index}
           src={token.src}
           size={token.size}
-          initialPosition={{ 
-            x: typeof token.position.x === 'string' 
-              ? (typeof window !== 'undefined' ? parseFloat(token.position.x) / 100 * window.innerWidth : 0)
+          initialPosition={{
+            x: typeof token.position.x === 'string'
+              ? parseFloat(token.position.x) / 100 * window.innerWidth
               : token.position.x,
-            y: token.position.y 
+            y: token.position.y
           }}
           animationDuration={token.duration}
         />
