@@ -46,6 +46,7 @@ const tokensData: TokenData[] = [
 
 export function FloatingTokens() {
   const [tokens, setTokens] = useState<TokenData[]>(tokensData);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -59,11 +60,12 @@ export function FloatingTokens() {
         }
       }));
       setTokens(updatedTokens);
+      setIsLoaded(true);
     }
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className={`absolute inset-0 overflow-hidden pointer-events-none ${isLoaded ? 'visible' : 'invisible'}`}>
       {tokens.map((token, index) => (
         <TokenImage
           key={index}

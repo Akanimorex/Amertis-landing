@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Logo from "/public/icons/Logo.svg";
 
 const socialLinks = [
-  { href: "#", label: "Twitter" },
+  { href: "https://x.com/AmertisExchange", label: "Twitter" },
   { href: "#", label: "Discord" },
-  { href: "#", label: "Documentation" }
+  { href: "https://github.com/AetherForge-Labs/Amertis-Exchange", label: "Github" }
 ];
 
 export function Footer() {
@@ -26,6 +26,7 @@ export function Footer() {
                 key={link.label}
                 href={link.href}
                 className="text-foreground/80 hover:text-primary transition-colors"
+                target="_blank"
               >
                 {link.label}
               </a>

@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function HeroContent() {
   return (
@@ -16,24 +17,27 @@ export function HeroContent() {
         Trade Smarter, Not Harder
       </h1>
       <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-        Artemis finds the best prices across all DEXes, saving you time and maximizing your returns with advanced routing algorithms.
+        Artemis finds the best prices across all DEXes, saving you time and
+        maximizing your returns with advanced routing algorithms.
       </p>
-      <motion.div 
+      <motion.div
         className="flex flex-col sm:flex-row justify-center gap-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <Button 
-          size="lg" 
-          className="group bg-[#8F199B] hover:bg-[#A11DAF] text-white"
-        >
-          Start Trading
-          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Button>
-        <Button 
-          size="lg" 
-          variant="outline" 
+        <Link href="https://amertis-test.vercel.app/" target="_blank">
+          <Button
+            size="lg"
+            className="group bg-[#8F199B] hover:bg-[#A11DAF] text-white"
+          >
+            Start Trading
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+        </Link>
+        <Button
+          size="lg"
+          variant="outline"
           className="group border-[#8F199B] text-[#8F199B] hover:bg-[#8F199B]/10"
         >
           Learn More
