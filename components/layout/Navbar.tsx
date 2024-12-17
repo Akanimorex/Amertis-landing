@@ -4,6 +4,8 @@ import { Coins } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import Logo from "/public/icons/Logo.svg";
+import Image from 'next/image';
 import {
   Sheet,
   SheetContent,
@@ -36,8 +38,12 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <Coins className="h-8 w-8 text-primary animate-pulse" />
-            <span className="text-2xl font-bold">Artemis</span>
+          <Image
+						src={Logo}
+						alt="Logo"
+						className=" h-[32px] w-[32px] "
+					/>          
+            <span className="text-2xl font-bold">Amertis</span>
           </div>
           
           {/* Desktop Navigation */}
