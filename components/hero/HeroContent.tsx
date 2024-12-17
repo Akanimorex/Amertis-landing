@@ -35,6 +35,7 @@ export function HeroContent() {
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </Link>
+        <Link href="#">
         <Button
           size="lg"
           variant="outline"
@@ -43,6 +44,7 @@ export function HeroContent() {
           Learn More
           <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
         </Button>
+        </Link>
       </motion.div>
     </motion.div>
   );
