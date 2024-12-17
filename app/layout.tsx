@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Artemis DEX Aggregator',
   description: 'Trade smarter across multiple DEXes with Artemis',
+  icons: {
+    icon: '/icons/Logo.svg', // Path to your favicon
+  },
 };
 
 export default function RootLayout({
