@@ -30,6 +30,14 @@ export function Navbar() {
     { href: "#about", label: "About" },
   ];
 
+  const handleSmoothScroll = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    event.preventDefault();
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={cn(
@@ -53,6 +61,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className="text-foreground/80 hover:text-primary transition-colors"
+                onClick={(e) => handleSmoothScroll(e, item.href)}
               >
                 {item.label}
               </a>
@@ -77,7 +86,10 @@ export function Navbar() {
                       key={item.href}
                       href={item.href}
                       className="text-foreground/80 hover:text-primary transition-colors"
-                      onClick={() => setIsSheetOpen(false)}
+                      onClick={(e) => {
+                        handleSmoothScroll(e, item.href);
+                        setIsSheetOpen(false);
+                      }}
                     >
                       {item.label}
                     </a>
