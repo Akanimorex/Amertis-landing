@@ -13,18 +13,23 @@ import {
 const features = [
   {
     icon: <Gauge className="h-6 w-6" />,
-    title: "Best Execution",
-    description: "Smart routing across multiple DEXes ensures you always get the best possible price for your trades."
+    title: "Deep Liquidity Access",
+    description: "Aggregate liquidity across multiple providers"
   },
   {
     icon: <Shield className="h-6 w-6" />,
-    title: "Security First",
-    description: "Built with security in mind, featuring audited smart contracts and robust safety measures."
+    title: "Lower slippage",
+    description: "Minimize price discrepancies across platforms"
   },
   {
     icon: <Globe className="h-6 w-6" />,
-    title: "Multi-Chain Support",
-    description: "Trade seamlessly across multiple blockchains with our unified interface."
+    title: "Wider Token selection",
+    description: "Access a broad range of assets"
+  },
+  {
+    icon: <Globe className="h-6 w-6" />,
+    title: "User-friendly Interface",
+    description: "Designed for both beginners and advanced traders"
   }
 ];
 
@@ -38,9 +43,9 @@ export function Features() {
           viewport={{ once: true }}
           className="text-3xl font-bold text-center mb-12"
         >
-          Why Choose Artemis?
+          Our Features
         </motion.h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -49,7 +54,7 @@ export function Features() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <Card className="group hover:shadow-lg transition-all duration-300">
+              <Card className="group h-56 hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     {feature.icon}

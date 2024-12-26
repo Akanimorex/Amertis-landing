@@ -17,8 +17,7 @@ export function HeroContent() {
         Trade Smarter, Not Harder
       </h1>
       <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-        Artemis finds the best prices across all DEXes, saving you time and
-        maximizing your returns with advanced routing algorithms.
+        Experience seamless trading with AmertisExchange, the ultimate aggregator connecting you to deep liquidity pools
       </p>
       <motion.div
         className="flex flex-col sm:flex-row justify-center gap-4"

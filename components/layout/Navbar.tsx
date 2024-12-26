@@ -26,7 +26,7 @@ export function Navbar() {
 
   const navItems = [
     { href: "#features", label: "Features" },
-    { href: "#stats", label: "Stats" },
+    { href: "#benefits", label: "Benefits" },
     { href: "#about", label: "About" },
   ];
 
