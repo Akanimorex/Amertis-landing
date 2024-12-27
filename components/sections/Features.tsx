@@ -35,7 +35,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-20 bg-muted/50">
+    <section id="features" className="py-20 bg-background/50">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -54,15 +54,15 @@ export function Features() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <Card className="group h-56 hover:shadow-lg transition-all duration-300">
+               <Card className="group h-56 bg-black border border-[#8F199B]/20 hover:border-[#8F199B]/50 transition-all duration-300 shadow-[0_0_30px_rgba(143,25,155,0.15)] hover:shadow-[0_0_40px_rgba(143,25,155,0.3)]">
                 <CardHeader>
-                  <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    {feature.icon}
+                  <div className="bg-[#8F199B]/10 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:bg-[#8F199B]/20 transition-colors">
+                    <div className="text-[#8F199B]">{feature.icon}</div>
                   </div>
-                  <CardTitle>{feature.title}</CardTitle>
+                  <CardTitle className="text-white">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription>{feature.description}</CardDescription>
+                  <CardDescription className="text-gray-400">{feature.description}</CardDescription>
                 </CardContent>
               </Card>
             </motion.div>
